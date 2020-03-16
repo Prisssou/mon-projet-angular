@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
+      <p>Mis à jour : {{ lastUpdate | async | date: 'short' }}</p>
       <ul class="list-group">
 <!--        <app-appareil [appareilName]="appareilOne" [appareilStatus]="off"></app-appareil>
         <app-appareil [appareilName]="appareilTwo" [appareilStatus]="on"></app-appareil>
