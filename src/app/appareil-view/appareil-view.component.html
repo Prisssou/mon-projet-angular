@@ -1,0 +1,19 @@
+<h2>Mes appareils</h2>
+<p>Mis à jour : {{ lastUpdate | async | date: 'short' }}</p>
+<ul class="list-group">
+  <!--        <app-appareil [appareilName]="appareilOne" [appareilStatus]="off"></app-appareil>
+          <app-appareil [appareilName]="appareilTwo" [appareilStatus]="on"></app-appareil>
+          <app-appareil [appareilName]="appareilThree" [appareilStatus]="off"></app-appareil>-->
+  <app-appareil *ngFor="let appareil of appareils; let i = index"
+                [indexOfAppareil]="i"
+                [appareilName]="appareil.name"
+                [appareilStatus]="appareil.status"
+                [id]="appareil.id"
+  ></app-appareil>
+</ul>
+<button class="btn btn-success"
+        (click)="onSwitchOn()">Tout allumer
+</button>
+<button class="btn btn-danger"
+        (click)="onSwitchOff()">Tout éteindre
+</button>
